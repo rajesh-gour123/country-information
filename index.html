@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <title>Country Info</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div id="videoContainer">
+            <h1>Country Information</h1>
+            <video id="countryVideo" src="./18724815-hd_1080_1920_40fps.mp4" autoplay loop muted playsinline></video>
+            <form id="countryForm">
+                <input type="text" id="countryName" placeholder="Enter country name" required>
+                <button type="submit" id="submit">Search</button>
+                </form>
+        </div>
+        
+        </div>
+        <div id="countryInfo">
+            <p id="countryFlag"></p>
+            <h2><span id="countryNameDisplay"></h2>
+            <p id="countryCapital"></p>
+            <p id="countryPopulation"></p>
+            <p id="countryStartOfWeek"></p>
+            <p id="countryTimezones"></p>
+            <p id="countryCurrencies"></p>
+            <p id="countryMap"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
