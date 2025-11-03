@@ -4,32 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-    <title>Country Info</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>Country Info Redesign</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main">
-        <div id="videoContainer">
+    <div class="main-container">
+        <header>
             <h1>Country Information</h1>
-            <video id="countryVideo" src="./18724815-hd_1080_1920_40fps.mp4" autoplay loop muted playsinline></video>
-            <form id="countryForm">
-                <input type="text" id="countryName" placeholder="Enter country name" required>
-                <button type="submit" id="submit">Search</button>
-                </form>
-        </div>
-        
-        </div>
-        <div id="countryInfo">
-            <p id="countryFlag"></p>
-            <h2><span id="countryNameDisplay"></h2>
-            <p id="countryCapital"></p>
-            <p id="countryPopulation"></p>
-            <p id="countryStartOfWeek"></p>
-            <p id="countryTimezones"></p>
-            <p id="countryCurrencies"></p>
-            <p id="countryMap"></p>
+        </header>
+
+        <form id="countryForm">
+            <input type="text" id="countryName" placeholder="Search for a country..." required>
+            <button type="submit" id="submit">Search</button>
+        </form>
+
+        <div id="countryInfo" class="info-card">
+            <div class="country-header">
+                <p id="countryFlag">🇬🇧</p> <h2 id="countryNameDisplay">British Indian Ocean Territory</h2>
+            </div>
+            
+            <div class="info-grid">
+                <p class="info-item"><i class="fas fa-city"></i> <span id="countryCapital">Capital: Diego Garcia</span></p>
+                <p class="info-item"><i class="fas fa-clock"></i> <span id="countryTimezones">UTC: +06:00</span></p>
+                
+                <p class="info-item"><i class="fas fa-users"></i> <span id="countryPopulation">Total Population: 0</span></p>
+                <p class="info-item"><i class="fas fa-globe-europe"></i> <span id="countryCurrencies">Currency: United States dollar</span></p>
+
+                <p class="info-item"><i class="fas fa-calendar-alt"></i> <span id="countryStartOfWeek">Start of the week: Monday</span></p>
+                <div class="info-item map-button-container">
+                     <button id="countryMap" class="map-button">View on Google Maps</button>
+                </div>
+            </div>
         </div>
     </div>
 
