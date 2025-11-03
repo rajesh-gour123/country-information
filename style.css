@@ -1,181 +1,185 @@
-*{
-    margin:0;
+/* General Reset and Font */
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: "Inconsolata", monospace;
-    overflow: hidden;
-}
-
-.main{
-    width:100%;
-    height: 100vh;
-    /* background-color: #4cae4c; */
-    position: relative;
-}
-
-
-#videoContainer {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-#countryVideo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-}
-
-h1 {
-    color: #e9d8a6;
-    z-index: 1;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-form {
-    position: relative;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
+    /* Using Inter as requested */
+    font-family: 'Inter', sans-serif; 
+    /* Light background with a subtle map pattern */
+    background-color: #f7f9fc;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23CED4DA' stroke-width='1.8' stroke-opacity='0.2'%3E%3Cpath fill='%23f7f9fc' d='M-140-50c26 0 46-20 46-46v-32c0-26-20-46-46-46h-63c-26 0-46 20-46 46v32c0 26 20 46 46 46h63zM-140-50c26 0 46 20 46 46v32c0 26-20 46-46 46h-63c-26 0-46-20-46-46v-32c0-26 20-46 46-46h63z' transform='rotate(15 1125 400) translate(-800 0) scale(4)' /%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-input[type="text"] {
-    padding: 10px;
-    padding-left: 1.2rem;
-    width: 40%;
-    border-radius: 100px;
-    height: 42px;
-    font-weight: 600;
-    color: #5cb85c;
-    border: 2px solid transparent;
-    background-color: #fefae0;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 5px rgba(92, 184, 92, 0.3);
+.main-container {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
 }
 
-input[type="text"]:focus {
+/* Header */
+header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: #343a40; /* Dark gray for a professional look */
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Form and Search Bar */
+#countryForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 10px;
+}
+
+#countryName {
+    padding: 12px 20px;
+    width: 60%;
+    max-width: 450px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    color: #495057;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: white;
+}
+
+#countryName:focus {
     outline: none;
-    border-color: #5cb85c;
-    box-shadow: 0 0 10px rgba(92, 184, 92, 0.7);
+    border-color: #00bcd4; /* Accent color */
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
 }
-button {
-    padding: 10px 15px;
+
+#submit {
+    padding: 12px 25px;
     border: none;
-    border-radius: 100px;
-    background-color: #5cb85c;
+    border-radius: 8px;
+    background-color: #00bcd4; /* Teal Accent */
     color: white;
     cursor: pointer;
-    width: 15%;
-    height: 50px;
-    min-width: 10%;
-}
-
-button:hover {
-    background-color: #4cae4c;
-}
-
-h2 {
-    color: #5cb85c;
-}
-
-p {
-    margin: 10px 0;
-}
-
-img {
-    max-width: 150px;
-    height: auto;
-    display: block;
-}
-
-
-
-#countryInfo{
-    color: #5cb85c;
-    position: absolute;
-    top: 35%;
-    right: 5%;
-}
-
-
-.container{
-    width:200px;
-}
-
-p{
+    font-weight: 600;
     font-size: 1rem;
-    color: #edf2f4;
-
+    width: 100px;
+    transition: background-color 0.3s;
 }
 
-h2{
-    color:#fefae0;
+#submit:hover {
+    background-color: #00a0b8; /* Darker Teal */
 }
 
-
-
-
-@media (max-width: 768px){
-    h1{
-        font-size: 1.7rem;
-    }
+/* Info Card */
+#countryInfo {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: left;
+    display: none; /* Hide until results are fetched by JavaScript */
+    /* Add this class for the example in the image */
+    display: block; 
 }
 
-
-@media (max-width: 520px){
-    h1{
-        font-size: 1.2rem;
-    }
-
-    #submit {
-        padding: 10px 15px;
-        border: none;
-        border-radius: 100px;
-        background-color: #5cb85c;
-        color: white;
-        cursor: pointer;
-        width: 110px;
-        height: 44px;
-        min-width: 10%;
-    }
-
-    #countryName[type="text"] {
-        font-size: 0.9rem;
-        padding: 10px;
-        padding-left: 1.2rem;
-        width: 300px;
-        border-radius: 100px;
-    }
+.country-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
+#countryFlag {
+    font-size: 3rem; /* Larger flag emoji */
+    margin-right: 15px;
+}
 
-@media (max-width: 368px){
-    h1{
-        font-size: 1.1rem;
-        position: absolute;
-        top: 5%;
-        left: 30%;
-        transform: translate(-10%, -10%);
+#countryNameDisplay {
+    font-size: 1.8rem;
+    color: #343a40;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Information Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for information */
+    gap: 20px;
+}
+
+.info-item {
+    font-size: 1rem;
+    color: #495057;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.info-item i {
+    color: #00bcd4; /* Teal icon color */
+    margin-right: 10px;
+    font-size: 1.2rem;
+    width: 25px; /* Fixed width for alignment */
+    text-align: center;
+}
+
+/* Map Button */
+.map-button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.map-button {
+    background-color: #4285f4; /* Google Maps blue */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.map-button:hover {
+    background-color: #357ae8;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
     }
 
     #countryForm {
-        gap: 0.3rem;
-        top: 16%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #countryName {
+        width: 90%;
+    }
+
+    #submit {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+
+    .map-button-container {
+        justify-content: flex-start;
     }
 }
