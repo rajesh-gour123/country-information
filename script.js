@@ -46,7 +46,7 @@ function displayCountryInfo(country) {
         countryNameDisplay.innerHTML = `<strong> Conutry: </strong> ${country.name}`;
         // countryCapital.innerHTML = country.capital
         countryCapital.innerHTML = `<strong>Capital:</strong> ${country.capital}`;
-        countryPopulation.innerHTML = `<strong>Total Population:</strong> ${country.population}`;
+        countryPopulation.innerHTML = `<strong>Total Population:</strong> ${country.population.toLocaleString()}`;
        // countryPopulation.innerHTML = country.population
        countryStartOfWeek.innerHTML = `<strong>Start of the Week:</strong> ${country.startOfWeek}`;
       // countryStartOfWeek.innerHTML = country.startOfWeek;
