@@ -205,6 +205,10 @@ header p{
     #countryFlag {
         font-size: 2.5rem;
     }
+
+    #countryFlag img{
+        width: 100%;
+    }
     #countryNameDisplay {
         font-size: 1.5rem;
     }
